@@ -1,0 +1,10 @@
+services:
+  debug:
+    image: gcr.io/hdl-containers/gtkwave
+    volumes:
+        - ./:/code
+        - /tmp/.X11-unix:/tmp/.X11-unix
+    working_dir: /code/rundir/
+    environment:
+        - DISPLAY=host.docker.internal:0
+    command: gtkwave -f test.vcd

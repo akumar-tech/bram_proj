@@ -1,0 +1,11 @@
+services:
+  debug:
+    image: gcr.io/hdl-containers/gtkwave
+    volumes:
+      - ./:/code
+      - \\wsl.localhost\Ubuntu-20.04\mnt\wslg:/tmp:ro
+    working_dir: /code/rundir/
+    environment:
+      - DISPLAY=:0
+      - PULSE_SERVER=/tmp/PulseServer
+    command: gtkwave -f test.vcd

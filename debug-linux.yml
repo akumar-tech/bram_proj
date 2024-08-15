@@ -1,0 +1,7 @@
+services:
+  debug:
+    image: gcr.io/hdl-containers/gtkwave
+    volumes:
+      - ./:/code
+    working_dir: /code/rundir/
+    command: gtkwave -f test.vcd
